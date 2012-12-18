@@ -28,6 +28,7 @@ type
 
     procedure Save( TextIO : TTextIO ); virtual;
     procedure Read( TextIO : TTextIO; Version : Integer ); virtual;
+    procedure MakeNew; virtual;
 
   {$ifdef USE_GRAPHICS}
     property Logo : TBitmap read fLogo write SetLogo;
@@ -65,12 +66,28 @@ end;
 
 procedure TMagicDispatcherRailroad.Save(TextIO: TTextIO);
 begin
-
+  SaveHeader( TextIO, Version );
+  TextIO.WriteLn( fNorthSouth );
+  TextIO.WriteLn( fEastPriority );
+  UNMODIFY;
+  SaveTrailer( TextIO );
 end;
 
 procedure TMagicDispatcherRailroad.Read(TextIO: TTextIO; Version: Integer);
 begin
+  MakeNew;
+  if Version >= 1 then
+    begin
+      TextIO.ReadLn( fNorthSouth );
+      TextIO.ReadLn( fEastPriority );
+    end;
+end;
 
+procedure TMagicDispatcherRailroad.MakeNew;
+begin
+  Name := 'UNDEFINED';
+  fNorthSouth := False;
+  fEastPriority := True;
 end;
 
 end.
