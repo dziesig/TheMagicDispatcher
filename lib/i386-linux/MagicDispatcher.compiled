@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
   <Compiler Value="/usr/bin/fpc" Date="1345796170"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -gh -vewnhi -Fi/home/donz/Desktop/Magic/MagicDispatcher/lib/i386-linux -Fl/opt/gnome/lib -Fu/home/donz/Desktop/Magic/MagicLibraries -Fu/usr/share/lazarus/1.0.4/lcl/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.0.4/lcl/units/i386-linux -Fu/usr/share/lazarus/1.0.4/components/lazutils/lib/i386-linux -Fu/usr/share/lazarus/1.0.4/packager/units/i386-linux -Fu/home/donz/Desktop/Magic/MagicDispatcher/ -FU/home/donz/Desktop/Magic/MagicDispatcher/lib/i386-linux/ -l -dLCL -dLCLgtk2 MagicDispatcher.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -gh -vewnhi -Fi/home/donz/Desktop/Magic/TheMagicDispatcher/lib/i386-linux -Fl/opt/gnome/lib -Fu/home/donz/Desktop/Magic/MagicLibraries -Fu/usr/share/lazarus/1.0.4/components/printers/lib/i386-linux/gtk2 -Fu/usr/share/lazarus/1.0.4/lcl/units/i386-linux/gtk2 -Fu/usr/share/lazarus/1.0.4/lcl/units/i386-linux -Fu/usr/share/lazarus/1.0.4/components/lazutils/lib/i386-linux -Fu/usr/share/lazarus/1.0.4/packager/units/i386-linux -Fu/home/donz/Desktop/Magic/TheMagicDispatcher/ -FU/home/donz/Desktop/Magic/TheMagicDispatcher/lib/i386-linux/ -l -dLCL -dLCLgtk2 MagicDispatcher.lpr"/>
 </CONFIG>

@@ -1,3 +1,22 @@
+//Copyright (c) 2012 by Donald R. Ziesig
+//
+//Donald.at.Ziesig.org
+//
+//This file is part of the MagicDispatcher program.
+//
+//MagicDispatcher is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//MagicDispatcher is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with MagicDispatcher.  If not, see <http://www.gnu.org/licenses/>.
+
 unit MagicDispatcherRailroadUnit1;
 
 {$mode objfpc}{$H+}
@@ -24,11 +43,12 @@ type
     procedure SetEastPriority(AValue: Boolean);
     procedure SetLogo(AValue: TBitmap);
     procedure SetNorthSouth(AValue: Boolean);
+
   public
 
-    procedure Save( TextIO : TTextIO ); virtual;
-    procedure Read( TextIO : TTextIO; Version : Integer ); virtual;
-    procedure MakeNew; virtual;
+    procedure Save( TextIO : TTextIO ); override;
+    procedure Read( TextIO : TTextIO; Version : Integer ); override;
+    procedure MakeNew; override;
 
   {$ifdef USE_GRAPHICS}
     property Logo : TBitmap read fLogo write SetLogo;
@@ -40,6 +60,9 @@ type
 
 
 implementation
+
+uses
+  ObjectFactory1;
 
 { TMagicDispatcherRailroad }
 
@@ -85,10 +108,15 @@ end;
 
 procedure TMagicDispatcherRailroad.MakeNew;
 begin
-  Name := 'UNDEFINED';
+  inherited;
+//  Name := 'UNDEFINED';
   fNorthSouth := False;
   fEastPriority := True;
 end;
+
+initialization
+  ObjectFactory.RegisterClass( TMagicDispatcherRailroad.ClassType );
+
 
 end.
 

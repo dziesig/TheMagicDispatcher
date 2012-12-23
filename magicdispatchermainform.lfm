@@ -1,0 +1,58 @@
+inherited MainForm: TMainForm
+  Left = 301
+  Height = 409
+  Top = 211
+  Width = 788
+  Caption = 'MainForm'
+  ClientHeight = 386
+  ClientWidth = 788
+  OnCreate = FormCreate
+  inherited StatusBar1: TStatusBar
+    Top = 372
+    Width = 788
+  end
+  inherited ToolBar1: TToolBar
+    Width = 788
+  end
+  inherited MainMenu1: TMainMenu[2]
+    object MenuItem14: TMenuItem[1]
+      Caption = 'Railroad'
+      object MenuItem15: TMenuItem
+        Action = RailroadRailroadAction
+      end
+      object MenuItem16: TMenuItem
+        Action = RailroadDefaultsAction
+      end
+      object MenuItem17: TMenuItem
+        Action = RailroadSectionsAction
+      end
+    end
+  end
+  inherited ActionList1: TActionList[3]
+    object RailroadRailroadAction: TAction[8]
+      Category = 'Railroad'
+      Caption = 'Railroad'
+      OnExecute = RailroadRailroadActionExecute
+    end
+    object RailroadDefaultsAction: TAction[9]
+      Category = 'Railroad'
+      Caption = 'Defaults'
+      OnExecute = RailroadDefaultsActionExecute
+    end
+    object RailroadSectionsAction: TAction[10]
+      Category = 'Railroad'
+      Caption = 'Sections'
+      OnExecute = RailroadSectionsActionExecute
+    end
+  end
+  inherited ImageList1: TImageList[4]
+  end
+  inherited OpenDialog1: TOpenDialog[5]
+  end
+  inherited SaveDialog1: TSaveDialog[6]
+  end
+  inherited PrinterSetupDialog1: TPrinterSetupDialog[7]
+  end
+  inherited PrintDialog1: TPrintDialog[8]
+  end
+end

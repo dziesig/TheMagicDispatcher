@@ -1,0 +1,18 @@
+object DefaultsForm: TDefaultsForm
+  Left = 301
+  Height = 361
+  Top = 211
+  Width = 531
+  Caption = 'DefaultsForm'
+  ClientHeight = 361
+  ClientWidth = 531
+  LCLVersion = '1.0.4.0'
+  object Label1: TLabel
+    Left = 96
+    Height = 18
+    Top = 35
+    Width = 60
+    Caption = 'Defaults'
+    ParentColor = False
+  end
+end

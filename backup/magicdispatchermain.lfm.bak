@@ -1,10 +1,10 @@
 object Form1: TForm1
   Left = 204
-  Height = 555
+  Height = 492
   Top = 163
   Width = 839
-  Caption = 'Form1'
-  ClientHeight = 532
+  Caption = 'The Magic Dispatcher'
+  ClientHeight = 469
   ClientWidth = 839
   Menu = MainMenu1
   OnCloseQuery = FormCloseQuery
@@ -63,43 +63,38 @@ object Form1: TForm1
   end
   object ScrollBox1: TScrollBox
     Left = 0
-    Height = 492
+    Height = 429
     Top = 26
     Width = 839
     HorzScrollBar.Page = 837
-    VertScrollBar.Increment = 49
-    VertScrollBar.Page = 490
+    VertScrollBar.Increment = 42
+    VertScrollBar.Page = 427
     VertScrollBar.Smooth = True
     VertScrollBar.Tracking = True
     Align = alClient
-    ClientHeight = 490
+    ClientHeight = 427
     ClientWidth = 837
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 0
-      Height = 490
+      Height = 427
       Top = 0
       Width = 837
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alClient
       ShowTabs = False
       TabIndex = 0
       TabOrder = 0
       Options = [nboHidePageListPopup]
-      object TabSheet1: TTabSheet
-        Caption = 'TabSheet1'
-      end
       object TabSheet2: TTabSheet
         Caption = 'TabSheet2'
-        ClientHeight = 484
+        ClientHeight = 421
         ClientWidth = 831
-        object Label2: TLabel
-          Left = 460
-          Height = 18
-          Top = 302
-          Width = 78
-          Caption = 'Tab Sheet 2'
-          ParentColor = False
+        inline PrimaryFrame: TFrame1
+          Height = 421
+          Width = 831
+          HorzScrollBar.Page = 831
+          VertScrollBar.Page = 421
         end
       end
     end
@@ -107,7 +102,7 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Height = 14
-    Top = 518
+    Top = 455
     Width = 839
     AutoHint = True
     Panels = <    
@@ -127,7 +122,7 @@ object Form1: TForm1
   end
   object MainMenu1: TMainMenu
     left = 56
-    top = 228
+    top = 236
     object MenuItem1: TMenuItem
       Caption = 'File'
       object FileNewMenuItem: TMenuItem
@@ -153,6 +148,18 @@ object Form1: TForm1
       end
       object MenuItem8: TMenuItem
         Action = FileExitAction
+      end
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Railroad'
+      object MenuItem10: TMenuItem
+        Action = RailroadName
+      end
+      object MenuItem11: TMenuItem
+        Action = RailroadDefaults
+      end
+      object MenuItem12: TMenuItem
+        Action = RailroadSections
       end
     end
   end
@@ -200,6 +207,21 @@ object Form1: TForm1
       Caption = 'Exit'
       Hint = 'Exit the Magic Dispatcher Program'
       OnExecute = FileExitActionExecute
+    end
+    object RailroadName: TAction
+      Category = 'Railroad'
+      Caption = 'Name'
+      OnExecute = RailroadNameExecute
+    end
+    object RailroadDefaults: TAction
+      Category = 'Railroad'
+      Caption = 'Defaults'
+      OnExecute = RailroadDefaultsExecute
+    end
+    object RailroadSections: TAction
+      Category = 'Railroad'
+      Caption = 'Sections'
+      OnExecute = RailroadSectionsExecute
     end
   end
   object ImageList1: TImageList

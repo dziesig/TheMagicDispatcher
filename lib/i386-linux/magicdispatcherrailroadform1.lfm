@@ -1,0 +1,36 @@
+inherited RailroadForm1: TRailroadForm1
+  Height = 343
+  Width = 694
+  Caption = 'RailroadForm1'
+  ClientHeight = 343
+  ClientWidth = 694
+  OnHide = FormHide
+  OnShow = FormShow
+  object LabeledEdit1: TLabeledEdit[0]
+    Left = 24
+    Height = 23
+    Top = 32
+    Width = 592
+    EditLabel.AnchorSideLeft.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit1
+    EditLabel.Left = 24
+    EditLabel.Height = 18
+    EditLabel.Top = 11
+    EditLabel.Width = 592
+    EditLabel.Caption = 'Railroad Name'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    Text = 'LabeledEdit1'
+    OnExit = LabeledEdit1Exit
+  end
+  object Edit1: TEdit[1]
+    Left = 24
+    Height = 23
+    Top = 68
+    Width = 80
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+end

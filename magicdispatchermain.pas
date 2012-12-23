@@ -27,13 +27,20 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
   ActnList, ComCtrls, StdCtrls,
 
-  MagicDispatcherRailroadUnit1;
+  MagicDispatcherRailroadUnit1, MagicFormFrame1, MagicDispatcherRailroadForm1,
+  RailroadDefaultsForm1, RailroadSectionsForm1;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    MenuItem11: TMenuItem;
+    MenuItem12: TMenuItem;
+    RailroadSections: TAction;
+    RailroadDefaults: TAction;
+    MenuItem10: TMenuItem;
+    RailroadName: TAction;
     FileExitAction: TAction;
     FileSaveAsAction: TAction;
     FileSaveAction: TAction;
@@ -41,8 +48,8 @@ type
     FileOpenAction: TAction;
     FileNewAction: TAction;
     ActionList1: TActionList;
+    PrimaryFrame: TFrame1;
     ImageList1: TImageList;
-    Label2: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     FileNewMenuItem: TMenuItem;
@@ -53,12 +60,12 @@ type
     MenuItem6: TMenuItem;
     MenuItem7: TMenuItem;
     MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
     OpenDialog1: TOpenDialog;
     PageControl1: TPageControl;
     SaveDialog1: TSaveDialog;
     ScrollBox1: TScrollBox;
     StatusBar1: TStatusBar;
-    TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
@@ -77,10 +84,21 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure RailroadDefaultsExecute(Sender: TObject);
+    procedure RailroadNameExecute(Sender: TObject);
+    procedure RailroadSectionsExecute(Sender: TObject);
   private
-    fRailroad: TMagicDispatcherRailroad;
-    procedure SetRailroad(AValue: TMagicDispatcherRailroad);
     { private declarations }
+    fRailroad: TMagicDispatcherRailroad;
+
+    RRForm : TRailroadForm1;
+    DefaultsForm : TDefaultsForm;
+    SectionsForm : TSectionsForm;
+    procedure SetRailroad(AValue: TMagicDispatcherRailroad);
+
+    function  IfSaveNecessary : Boolean;
+    procedure RRChanged( Sender : TObject ); // Event fired when any component
+                                             // of fRailroad changes.
   public
     { public declarations }
     property Railroad : TMagicDispatcherRailroad read fRailroad write SetRailroad;
@@ -101,11 +119,13 @@ uses
 const
   UntitledRR = 'UNTITLED RR';
   NoRRFile   = 'NOFILE.mdrr';
+  TitleLeader = 'The Magic Dispatcher - ';
 
 procedure TForm1.FileNewActionExecute(Sender: TObject);
 begin
   fRailroad.Free;
   Railroad := TMagicDispatcherRailroad.Create( nil, UntitledRR );
+  StatusBar1.Panels[1].Text := NoRRFile;
 end;
 
 procedure TForm1.FileCloseActionExecute(Sender: TObject);
@@ -144,9 +164,9 @@ end;
 procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
   if Railroad.Modified then
-    if MessageDlg( 'Magic Dispatcher', Railroad.Name + ' has been modified.#13@10Do You want to save the file?',
+    if MessageDlg( 'Magic Dispatcher', Railroad.Name + ' has been modified.'#13#10'Do You want to save the file?',
                    mtConfirmation,
-                   [mbYes, mbNo],0) = mrYes then
+                   [mbYes, mbNo, mbCancel],0) = mrYes then
       begin
         CanClose := False;
       end
@@ -156,7 +176,11 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  RRForm := TRailroadForm1.Create( self );
+  DefaultsForm := TDefaultsForm.Create( self );
+  SectionsForm := TSectionsForm.Create( self );
   Railroad := TMagicDispatcherRailroad.Create( nil, UntitledRR );
+  PrimaryFrame.Form := RRForm;
 end;
 
 procedure TForm1.FormResize(Sender: TObject);
@@ -165,14 +189,43 @@ begin
   StatusBar1.Panels[3].Text := IntToStr( Width );
 end;
 
+procedure TForm1.RailroadDefaultsExecute(Sender: TObject);
+begin
+  PrimaryFrame.Form := DefaultsForm
+end;
+
+procedure TForm1.RailroadNameExecute(Sender: TObject);
+begin
+  PrimaryFrame.Form := RRForm;
+end;
+
+procedure TForm1.RailroadSectionsExecute(Sender: TObject);
+begin
+  PrimaryFrame.Form := SectionsForm;
+end;
+
 procedure TForm1.SetRailroad(AValue: TMagicDispatcherRailroad);
 begin
   if fRailroad=AValue then Exit;
   fRailroad:=AValue;
   if Assigned( fRailroad ) then
-    StatusBar1.Panels[1].Text := fRailroad.Name
+    Caption := TitleLeader + fRailroad.Name
   else
-    StatusBar1.Panels[1].Text := 'nil  This should never happen.';
+    Caption := TitleLeader + 'nil  This should never happen.';
+  RRForm.Railroad := fRailroad;
+  DefaultsForm.Railroad := fRailroad;
+  SectionsForm.Railroad := fRailroad;
+  fRailroad.OnChange := @RRChanged;
+end;
+
+function TForm1.IfSaveNecessary: Boolean;
+begin
+
+end;
+
+procedure TForm1.RRChanged(Sender: TObject);
+begin
+  Caption := TitleLeader + (Sender as TMagicDispatcherRailroad).Name;
 end;
 
 end.

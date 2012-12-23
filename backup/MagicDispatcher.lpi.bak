@@ -30,45 +30,101 @@
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="1">
+    <RequiredPackages Count="2">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="Printer4Lazarus"/>
       </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="13">
       <Unit0>
         <Filename Value="MagicDispatcher.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MagicDispatcher"/>
       </Unit0>
       <Unit1>
-        <Filename Value="magicdispatchermain.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="MagicDispatcherMain"/>
-      </Unit1>
-      <Unit2>
         <Filename Value="magicdispatcherrailroadunit1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MagicDispatcherRailroadUnit1"/>
-      </Unit2>
-      <Unit3>
+      </Unit1>
+      <Unit2>
         <Filename Value="../MagicLibraries/persists1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="persists1"/>
-      </Unit3>
-      <Unit4>
+      </Unit2>
+      <Unit3>
         <Filename Value="../MagicLibraries/textio1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TextIO1"/>
-      </Unit4>
-      <Unit5>
+      </Unit3>
+      <Unit4>
         <Filename Value="../MagicLibraries/common1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Common1"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../MagicLibraries/magicformframe1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Frame1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="MagicFormFrame1"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="magicdispatcherrailroadform1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RailroadForm1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="magicdispatcherrailroadform1"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="railroaddefaultsform1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DefaultsForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="railroaddefaultsform1"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SectionsForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="railroadsectionsform1"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="railroadbaseform1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RailroadBaseForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="railroadbaseform1"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../MagicLibraries/magicmainformbase1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MagicMainFormBase"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="magicmainformbase1"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="magicdispatchermainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="magicdispatchermainform"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../MagicLibraries/cursorstackunit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CursorStackUnit1"/>
+      </Unit12>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,0 +1,9 @@
+object RailroadBaseForm: TRailroadBaseForm
+  Left = 301
+  Height = 240
+  Top = 211
+  Width = 320
+  Caption = 'RailroadBaseForm'
+  OnCreate = FormCreate
+  LCLVersion = '1.0.4.0'
+end

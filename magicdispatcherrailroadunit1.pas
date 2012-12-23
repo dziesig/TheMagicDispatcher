@@ -43,11 +43,12 @@ type
     procedure SetEastPriority(AValue: Boolean);
     procedure SetLogo(AValue: TBitmap);
     procedure SetNorthSouth(AValue: Boolean);
+
   public
 
-    procedure Save( TextIO : TTextIO ); virtual;
-    procedure Read( TextIO : TTextIO; Version : Integer ); virtual;
-    procedure MakeNew; virtual;
+    procedure Save( TextIO : TTextIO ); override;
+    procedure Read( TextIO : TTextIO; Version : Integer ); override;
+    procedure MakeNew; override;
 
   {$ifdef USE_GRAPHICS}
     property Logo : TBitmap read fLogo write SetLogo;
@@ -59,6 +60,9 @@ type
 
 
 implementation
+
+uses
+  ObjectFactory1;
 
 { TMagicDispatcherRailroad }
 
@@ -104,10 +108,14 @@ end;
 
 procedure TMagicDispatcherRailroad.MakeNew;
 begin
-  Name := 'UNDEFINED';
+  inherited;
   fNorthSouth := False;
   fEastPriority := True;
 end;
+
+initialization
+  ObjectFactory.RegisterClass( TMagicDispatcherRailroad.ClassType );
+
 
 end.
 
