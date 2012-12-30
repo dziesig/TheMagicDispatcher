@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="34">
+    <Units Count="41">
       <Unit0>
         <Filename Value="MagicDispatcher.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -11,34 +11,38 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="22"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="94"/>
       </Unit0>
       <Unit1>
         <Filename Value="magicdispatcherrailroadunit1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="MagicDispatcherRailroadUnit1"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="96"/>
-        <CursorPos X="1" Y="112"/>
-        <UsageCount Value="36"/>
+        <TopLine Value="131"/>
+        <CursorPos X="1" Y="148"/>
+        <UsageCount Value="92"/>
+        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="../MagicLibraries/persists1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="persists1"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="183"/>
-        <CursorPos X="1" Y="181"/>
-        <UsageCount Value="35"/>
+        <TopLine Value="166"/>
+        <CursorPos X="1" Y="184"/>
+        <UsageCount Value="91"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="../MagicLibraries/textio1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TextIO1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="20"/>
-        <UsageCount Value="35"/>
+        <TopLine Value="100"/>
+        <CursorPos X="30" Y="113"/>
+        <UsageCount Value="91"/>
       </Unit3>
       <Unit4>
         <Filename Value="../MagicLibraries/common1.pas"/>
@@ -47,64 +51,51 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="89"/>
       </Unit4>
       <Unit5>
-        <Filename Value="../MagicLibraries/magicformframe1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Frame1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Frame"/>
-        <UnitName Value="MagicFormFrame1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="71"/>
-        <CursorPos X="1" Y="91"/>
-        <UsageCount Value="33"/>
-      </Unit5>
-      <Unit6>
         <Filename Value="magicdispatcherrailroadform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RailroadForm1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicdispatcherrailroadform1"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="26"/>
-        <CursorPos X="1" Y="50"/>
-        <UsageCount Value="32"/>
+        <TopLine Value="62"/>
+        <CursorPos X="50" Y="80"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="railroaddefaultsform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DefaultsForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="railroaddefaultsform1"/>
-        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="15"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="32"/>
-        <Loaded Value="True"/>
-      </Unit7>
-      <Unit8>
+        <UsageCount Value="88"/>
+      </Unit6>
+      <Unit7>
         <Filename Value="railroadsectionsform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="SectionsForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="railroadsectionsform1"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="15"/>
-        <CursorPos X="1" Y="20"/>
-        <UsageCount Value="32"/>
+        <TopLine Value="235"/>
+        <CursorPos X="1" Y="244"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
-      </Unit8>
-      <Unit9>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="railroadbaseform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RailroadBaseForm"/>
@@ -113,13 +104,12 @@
         <UnitName Value="railroadbaseform1"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="27"/>
-        <CursorPos X="16" Y="47"/>
-        <UsageCount Value="31"/>
+        <TopLine Value="28"/>
+        <CursorPos X="1" Y="47"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit9>
-      <Unit10>
+      </Unit8>
+      <Unit9>
         <Filename Value="../MagicLibraries/magicmainformbase1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MagicMainFormBase"/>
@@ -127,146 +117,175 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicmainformbase1"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="233"/>
-        <CursorPos X="1" Y="252"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="229"/>
+        <CursorPos X="19" Y="222"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit10>
-      <Unit11>
+      </Unit9>
+      <Unit10>
         <Filename Value="magicdispatchermainform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicdispatchermainform"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="74"/>
-        <CursorPos X="32" Y="94"/>
-        <UsageCount Value="28"/>
+        <TopLine Value="5"/>
+        <CursorPos X="32" Y="17"/>
+        <UsageCount Value="84"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit11>
-      <Unit12>
+      </Unit10>
+      <Unit11>
         <Filename Value="../MagicLibraries/cursorstackunit1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CursorStackUnit1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="23"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="81"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../MagicLibraries/picturepersists1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PicturePersists1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="34"/>
+        <CursorPos X="1" Y="67"/>
+        <UsageCount Value="75"/>
       </Unit12>
       <Unit13>
+        <Filename Value="railroadsectionsunit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="railroadsectionsunit1"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="33"/>
+        <CursorPos X="38" Y="60"/>
+        <UsageCount Value="66"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../MagicLibraries/magicformframe1.pas"/>
+        <ComponentName Value="Frame1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="MagicFormFrame1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="103"/>
+        <CursorPos X="1" Y="119"/>
+        <UsageCount Value="46"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="magicdispatchermain.pas"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MagicDispatcherMain"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="207"/>
+        <TopLine Value="208"/>
         <CursorPos X="1" Y="229"/>
-        <UsageCount Value="38"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="34"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="../MagicWebsiteBuilder/menucssunit1.pas"/>
         <UnitName Value="MenuCSSUnit1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="288"/>
         <CursorPos X="1" Y="355"/>
-        <UsageCount Value="10"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="6"/>
+      </Unit16>
+      <Unit17>
         <Filename Value="../MagicLibraries/datetimeframe1.pas"/>
         <UnitName Value="datetimeframe1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="6"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="../MagicLibraries/datetimeobj1.pas"/>
         <UnitName Value="DateTimeObj1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="6"/>
+      </Unit18>
+      <Unit19>
         <Filename Value="../MagicLibraries/generics1.pas"/>
         <UnitName Value="generics1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-      </Unit17>
-      <Unit18>
+        <TopLine Value="133"/>
+        <CursorPos X="1" Y="146"/>
+        <UsageCount Value="29"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="../MagicLibraries/objectfactory1.pas"/>
         <UnitName Value="ObjectFactory1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit18>
-      <Unit19>
+        <UsageCount Value="6"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="../MagicLibraries/stringsubs.pas"/>
         <UnitName Value="StringSubs"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="6"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="../MagicLibraries/texttospeech1.pas"/>
         <UnitName Value="texttospeech1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="6"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="../MagicLibraries/UnitTests/baseform2.pas"/>
         <UnitName Value="baseform2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="1" Y="23"/>
-        <UsageCount Value="10"/>
-      </Unit21>
-      <Unit22>
+        <UsageCount Value="6"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="../MagicLibraries/UnitTests/common1test2form.pas"/>
         <UnitName Value="Common1Test2Form"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="26" Y="11"/>
-        <UsageCount Value="10"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="6"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="../MagicLibraries/UnitTests/datetimeobj1test2form.pas"/>
         <UnitName Value="datetimeobj1test2form"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
-      </Unit23>
-      <Unit24>
+        <UsageCount Value="6"/>
+      </Unit25>
+      <Unit26>
         <Filename Value="../MagicLibraries/UnitTests/datetimeobjframe1test1form.pas"/>
         <UnitName Value="DateTimeObjFrame1test1form"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="6"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="../MagicLibraries/UnitTests/stringsubtestform2.pas"/>
         <UnitName Value="stringsubtestform2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="431"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit25>
-      <Unit26>
+        <UsageCount Value="6"/>
+      </Unit27>
+      <Unit28>
         <Filename Value="../MagicLibraries/UnitTests/texttospeech1test1form.pas"/>
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
@@ -275,185 +294,220 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="93" Y="5"/>
-        <UsageCount Value="10"/>
-      </Unit26>
-      <Unit27>
+        <UsageCount Value="6"/>
+      </Unit28>
+      <Unit29>
         <Filename Value="README.md"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="6"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="6"/>
         <DefaultSyntaxHighlighter Value="None"/>
-      </Unit27>
-      <Unit28>
+      </Unit29>
+      <Unit30>
         <Filename Value="/usr/share/lazarus/1.0.4/lcl/include/control.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3253"/>
-        <CursorPos X="1" Y="3264"/>
-        <UsageCount Value="10"/>
-      </Unit28>
-      <Unit29>
+        <TopLine Value="5223"/>
+        <CursorPos X="1" Y="5235"/>
+        <UsageCount Value="17"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="../MagicWebsiteBuilder/mwbmain1.pas"/>
         <UnitName Value="MWBMain1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="193"/>
         <CursorPos X="1" Y="261"/>
-        <UsageCount Value="10"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="6"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="../MagicWebsiteBuilder/generalcssunit1.pas"/>
         <UnitName Value="GeneralCSSUnit1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="100"/>
         <CursorPos X="1" Y="510"/>
-        <UsageCount Value="10"/>
-      </Unit30>
-      <Unit31>
+        <UsageCount Value="6"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="/usr/share/lazarus/1.0.4/lcl/include/customform.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1017"/>
-        <CursorPos X="1" Y="1030"/>
-        <UsageCount Value="10"/>
-      </Unit31>
-      <Unit32>
+        <TopLine Value="1448"/>
+        <CursorPos X="1" Y="1465"/>
+        <UsageCount Value="17"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="/usr/share/lazarus/1.0.4/lcl/include/application.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2184"/>
         <CursorPos X="1" Y="2196"/>
-        <UsageCount Value="10"/>
-      </Unit32>
-      <Unit33>
+        <UsageCount Value="6"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="/usr/share/lazarus/1.0.4/lcl/include/wincontrol.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3451"/>
-        <CursorPos X="1" Y="3463"/>
+        <TopLine Value="7869"/>
+        <CursorPos X="1" Y="7881"/>
+        <UsageCount Value="8"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="/usr/share/lazarus/1.0.4/lcl/extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="500"/>
+        <CursorPos X="3" Y="512"/>
+        <UsageCount Value="8"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="../MagicWebsiteBuilder/imagesandbgunit1.pas"/>
+        <UnitName Value="ImagesAndBGUnit1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="370"/>
+        <CursorPos X="1" Y="392"/>
+        <UsageCount Value="7"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="/usr/share/fpcsrc/2.6.0/rtl/objpas/classes/classesh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="151"/>
+        <CursorPos X="1" Y="163"/>
+        <UsageCount Value="8"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="/usr/share/lazarus/1.0.4/lcl/grids.pas"/>
+        <UnitName Value="Grids"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8667"/>
+        <CursorPos X="1" Y="8675"/>
         <UsageCount Value="10"/>
-      </Unit33>
+      </Unit39>
+      <Unit40>
+        <Filename Value="/usr/share/lazarus/1.0.4/lcl/interfaces/gtk2/gtk2wscontrols.pp"/>
+        <UnitName Value="Gtk2WSControls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="268"/>
+        <CursorPos X="1" Y="280"/>
+        <UsageCount Value="8"/>
+      </Unit40>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="112" Column="12" TopLine="99"/>
+        <Filename Value="../MagicLibraries/persists1.pas"/>
+        <Caret Line="180" Column="1" TopLine="163"/>
       </Position1>
       <Position2>
-        <Filename Value="railroadbaseform1.pas"/>
-        <Caret Line="21" Column="1" TopLine="3"/>
+        <Filename Value="../MagicLibraries/persists1.pas"/>
+        <Caret Line="181" Column="1" TopLine="163"/>
       </Position2>
       <Position3>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="33" Column="26" TopLine="20"/>
+        <Filename Value="../MagicLibraries/persists1.pas"/>
+        <Caret Line="182" Column="1" TopLine="164"/>
       </Position3>
       <Position4>
-        <Filename Value="railroaddefaultsform1.pas"/>
-        <Caret Line="20" Column="1" TopLine="8"/>
+        <Filename Value="../MagicLibraries/persists1.pas"/>
+        <Caret Line="183" Column="1" TopLine="165"/>
       </Position4>
       <Position5>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="34" Column="24" TopLine="20"/>
+        <Filename Value="../MagicLibraries/persists1.pas"/>
+        <Caret Line="184" Column="1" TopLine="166"/>
       </Position5>
       <Position6>
         <Filename Value="railroadsectionsform1.pas"/>
-        <Caret Line="20" Column="1" TopLine="3"/>
+        <Caret Line="241" Column="1" TopLine="230"/>
       </Position6>
       <Position7>
-        <Filename Value="magicdispatcherrailroadform1.pas"/>
-        <Caret Line="24" Column="1" TopLine="19"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="242" Column="1" TopLine="230"/>
       </Position7>
       <Position8>
         <Filename Value="railroadsectionsform1.pas"/>
-        <Caret Line="20" Column="1" TopLine="15"/>
+        <Caret Line="245" Column="1" TopLine="230"/>
       </Position8>
       <Position9>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="80" Column="18" TopLine="64"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="241" Column="1" TopLine="230"/>
       </Position9>
       <Position10>
-        <Filename Value="magicdispatcherrailroadform1.pas"/>
-        <Caret Line="50" Column="1" TopLine="35"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="242" Column="3" TopLine="230"/>
       </Position10>
       <Position11>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="80" Column="1" TopLine="64"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="244" Column="31" TopLine="230"/>
       </Position11>
       <Position12>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="113" Column="1" TopLine="101"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="246" Column="23" TopLine="235"/>
       </Position12>
       <Position13>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="114" Column="1" TopLine="101"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="244" Column="1" TopLine="235"/>
       </Position13>
       <Position14>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="108" Column="1" TopLine="101"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="245" Column="1" TopLine="235"/>
       </Position14>
       <Position15>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="109" Column="1" TopLine="101"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="246" Column="1" TopLine="235"/>
       </Position15>
       <Position16>
-        <Filename Value="railroadbaseform1.pas"/>
-        <Caret Line="39" Column="3" TopLine="22"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="248" Column="1" TopLine="235"/>
       </Position16>
       <Position17>
-        <Filename Value="railroadbaseform1.pas"/>
-        <Caret Line="45" Column="3" TopLine="23"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="249" Column="1" TopLine="235"/>
       </Position17>
       <Position18>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="70" Column="1" TopLine="49"/>
+        <Filename Value="magicdispatcherrailroadunit1.pas"/>
+        <Caret Line="148" Column="1" TopLine="131"/>
       </Position18>
       <Position19>
-        <Filename Value="railroadbaseform1.pas"/>
-        <Caret Line="46" Column="1" TopLine="28"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="244" Column="1" TopLine="235"/>
       </Position19>
       <Position20>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="70" Column="1" TopLine="50"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="245" Column="1" TopLine="235"/>
       </Position20>
       <Position21>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="116" Column="1" TopLine="102"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="246" Column="1" TopLine="235"/>
       </Position21>
       <Position22>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="109" Column="1" TopLine="102"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="247" Column="1" TopLine="235"/>
       </Position22>
       <Position23>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="110" Column="1" TopLine="102"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="248" Column="1" TopLine="235"/>
       </Position23>
       <Position24>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="117" Column="3" TopLine="102"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="249" Column="1" TopLine="235"/>
       </Position24>
       <Position25>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="124" Column="3" TopLine="109"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="244" Column="1" TopLine="235"/>
       </Position25>
       <Position26>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="85" Column="3" TopLine="83"/>
+        <Filename Value="railroadbaseform1.pas"/>
+        <Caret Line="47" Column="1" TopLine="28"/>
       </Position26>
       <Position27>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="80" Column="3" TopLine="78"/>
+        <Filename Value="railroadsectionsform1.pas"/>
+        <Caret Line="244" Column="1" TopLine="235"/>
       </Position27>
       <Position28>
         <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="82" Column="3" TopLine="80"/>
+        <Caret Line="143" Column="1" TopLine="131"/>
       </Position28>
       <Position29>
         <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="92" Column="32" TopLine="72"/>
+        <Caret Line="17" Column="32" TopLine="5"/>
       </Position29>
-      <Position30>
-        <Filename Value="magicdispatchermainform.pas"/>
-        <Caret Line="93" Column="32" TopLine="73"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
@@ -466,10 +520,15 @@
         <Line Value="625"/>
       </Item1>
     </BreakPoints>
-    <Watches Count="1">
+    <Watches Count="2">
       <Item1>
-        <Expression Value="M"/>
+        <Expression Value="T"/>
+        <DisplayStyle Value="wdfString"/>
       </Item1>
+      <Item2>
+        <Expression Value="N"/>
+        <DisplayStyle Value="wdfString"/>
+      </Item2>
     </Watches>
   </Debugging>
 </CONFIG>

@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, PrintersDlgs, Forms, Controls, Graphics, Dialogs,
   ComCtrls, Menus, ActnList, MagicDispatcherRailroadUnit1, magicmainformbase1,
-  MagicDispatcherRailroadForm1, RailroadDefaultsForm1, RailroadSectionsForm1;
+  MagicDispatcherRailroadForm1, RailroadDefaultsForm1, RailroadSectionsForm1,
+  MagicFormFrame1;
 
 type
 
@@ -39,6 +40,8 @@ type
     RRForm : TRailroadForm1;
     DefaultsForm : TDefaultsForm;
     SectionsForm : TSectionsForm;
+
+    procedure UpdateData; override;
 
   public
     { public declarations }
@@ -98,6 +101,7 @@ procedure TMainForm.FileNew;
 var
   RR : TMagicDispatcherRailroad; // for debug
 begin
+  inherited;
   Data.Free;
   RR := TMagicDispatcherRailroad.Create( nil, UntitledRR );
   Railroad := RR;
@@ -143,6 +147,12 @@ end;
 procedure TMainForm.RRChanged(Sender: TObject);
 begin
   Data := (Sender as TMagicDispatcherRailroad);
+end;
+
+procedure TMainForm.UpdateData;
+begin
+  PrimaryFrame.Form.Hide;   // Hack to copy the controls to the data
+  PrimaryFrame.Form.Show;   // Then restore the display
 end;
 
 end.

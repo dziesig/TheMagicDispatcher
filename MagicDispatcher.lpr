@@ -8,9 +8,10 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, printer4lazarus, MagicDispatcherRailroadUnit1,
-  persists1, TextIO1, Common1, MagicFormFrame1, magicdispatcherrailroadform1,
+  persists1, TextIO1, Common1, magicdispatcherrailroadform1,
   railroaddefaultsform1, railroadsectionsform1, railroadbaseform1,
-  magicmainformbase1, CursorStackUnit1, magicdispatchermainform
+  magicmainformbase1, CursorStackUnit1, magicdispatchermainform, 
+picturepersists1, railroadsectionsunit1
   { you can add units after this };
 
 {$R *.res}

@@ -21,13 +21,12 @@ unit MagicDispatcherRailroadUnit1;
 
 {$mode objfpc}{$H+}
 
-{$define USE_GRAPHICS}
 interface
 
 uses
-  Classes, SysUtils, Graphics,
+  Classes, SysUtils, Graphics, ExtCtrls,
 
-  Persists1, TextIO1;
+  Persists1, TextIO1, PicturePersists1, RailroadSectionsUnit1s;
 
 type
 
@@ -35,27 +34,33 @@ type
 
   TMagicDispatcherRailroad = class( TPersists )
   private
-  {$ifdef USE_GRAPHICS}
-    fLogo         : TBitmap;
-  {$endif}
-    fNorthSouth   : Boolean; // If False Railroad uses East/West timetable
-    fEastPriority : Boolean; // East(North)bound Trains have priority
-    procedure SetEastPriority(AValue: Boolean);
-    procedure SetLogo(AValue: TBitmap);
-    procedure SetNorthSouth(AValue: Boolean);
-
+    fExtraTrainName: String;
+    fSectionList: TSectionList;
+    fSuperiorDirection : String;
+    fInferiorDirection : String;
+    fSuperiorIsOdd     : Boolean;
+    fLogo         : TPicturePersists;
+    function GetLogo: TPicture;
+    procedure SetExtraTrainName(AValue: String);
+    procedure SetInferiorDirection(AValue: String);
+    procedure SetSectionList(AValue: TSectionList);
+    procedure SetSuperiorDirection(AValue: String);
+    procedure SetSuperiorIsOdd(AValue: Boolean);
+    procedure SetLogo(AValue: TPicture);
   public
 
     procedure Save( TextIO : TTextIO ); override;
     procedure Read( TextIO : TTextIO; Version : Integer ); override;
     procedure MakeNew; override;
+    procedure UNMODIFY; override;
 
-  {$ifdef USE_GRAPHICS}
-    property Logo : TBitmap read fLogo write SetLogo;
-  {$endif}
-    property NorthSouth : Boolean   read fNorthSouth   write SetNorthSouth;
-    property EastPriority : Boolean read fEastPriority write SetEastPriority;
-  end; // TMagicDispatcherRailroad
+    property Logo         : TPicture read GetLogo       write SetLogo;
+    property SuperiorDirection : String  read fSuperiorDirection write SetSuperiorDirection;
+    property InferiorDirection : String  read fInferiorDirection write SetInferiorDirection;
+    property SuperiorIsOdd     : Boolean read fSuperiorIsOdd     write SetSuperiorIsOdd;
+    property ExtraTrainName    : String  read fExtraTrainName    write SetExtraTrainName;
+    property SectionList       : TSectionList read fSectionList  write SetSectionList;
+end; // TMagicDispatcherRailroad
 
 
 
@@ -67,32 +72,59 @@ uses
 { TMagicDispatcherRailroad }
 
 const
-  Version = 1;
+  Version = 3;
 
-procedure TMagicDispatcherRailroad.SetEastPriority(AValue: Boolean);
+function TMagicDispatcherRailroad.GetLogo: TPicture;
 begin
-  Update( fEastPriority, AValue );
+  Result := fLogo.Picture;
 end;
 
-{$ifdef USE_GRAPHICS}
-procedure TMagicDispatcherRailroad.SetLogo(AValue: TBitmap);
+procedure TMagicDispatcherRailroad.SetExtraTrainName(AValue: String);
 begin
-  if fLogo=AValue then Exit;
-  fLogo:=AValue;
+  Update( fExtraTrainName, AValue);
 end;
-{$endif}
 
-procedure TMagicDispatcherRailroad.SetNorthSouth(AValue: Boolean);
+procedure TMagicDispatcherRailroad.SetInferiorDirection(AValue: String);
 begin
-  Update( fNorthSouth, AValue );
+  Update( fInferiorDirection, AValue );
 end;
+
+procedure TMagicDispatcherRailroad.SetSectionList(AValue: TSectionList);
+begin
+  if fSectionList=AValue then Exit;
+  fSectionList:=AValue;
+end;
+
+procedure TMagicDispatcherRailroad.SetSuperiorDirection(AValue: String);
+begin
+  Update( fSuperiorDirection, AValue );
+end;
+
+procedure TMagicDispatcherRailroad.SetSuperiorIsOdd(AValue: Boolean);
+begin
+  Update( fSuperiorIsOdd, AValue );
+end;
+
+procedure TMagicDispatcherRailroad.SetLogo(AValue: TPicture);
+var
+  OldLogo : String;
+begin
+  OldLogo := fLogo.Pixval;
+  fLogo.Picture := AValue;
+  if OldLogo <> fLogo.Pixval then
+    Modify;
+end;
+
 
 procedure TMagicDispatcherRailroad.Save(TextIO: TTextIO);
 begin
   SaveHeader( TextIO, Version );
-  TextIO.WriteLn( fNorthSouth );
-  TextIO.WriteLn( fEastPriority );
-  UNMODIFY;
+  TextIO.WriteLn( fSuperiorDirection );
+  TextIO.WriteLn( fInferiorDirection );
+  TextIO.WriteLn( fSuperiorIsOdd );
+  fLogo.Save( TextIO );
+  TextIO.WriteLn( fExtraTrainName );
+  fSectionList.Save( TextIO );
   SaveTrailer( TextIO );
 end;
 
@@ -101,17 +133,37 @@ begin
   MakeNew;
   if Version >= 1 then
     begin
-      TextIO.ReadLn( fNorthSouth );
-      TextIO.ReadLn( fEastPriority );
+      TextIO.ReadLn( fSuperiorDirection );
+      TextIO.ReadLn( fInferiorDirection );
+      TextIO.ReadLn( fSuperiorIsOdd );
+      fLogo := TPicturePersists.Load( TextIO ) as TPicturePersists;
+    end;
+  if Version >= 2 then
+    begin
+      TextIO.ReadLn( fExtraTrainName );
+    end;
+  if Version >= 3 then
+    begin
+      fSectionList.Free;
+      fSectionList := TSectionList.Load( TextIO ) as TSectionList;
     end;
 end;
 
 procedure TMagicDispatcherRailroad.MakeNew;
 begin
   inherited;
-//  Name := 'UNDEFINED';
-  fNorthSouth := False;
-  fEastPriority := True;
+  fSuperiorDirection := 'East';
+  fInferiorDirection := 'West';
+  fSuperiorIsOdd     := False;
+  fExtraTrainName    := 'Extra';
+  fLogo := TPicturePersists.Create( self );
+  fSectionList := TSectionList.Create( self );
+end;
+
+procedure TMagicDispatcherRailroad.UNMODIFY;
+begin
+  inherited UNMODIFY;
+  if Assigned( fLogo ) then fLogo.UNMODIFY;
 end;
 
 initialization

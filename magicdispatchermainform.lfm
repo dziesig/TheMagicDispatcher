@@ -1,20 +1,30 @@
 inherited MainForm: TMainForm
-  Left = 301
-  Height = 409
-  Top = 211
-  Width = 788
+  Left = 317
+  Height = 566
+  Top = 75
+  Width = 732
+  Anchors = []
+  AutoSize = False
   Caption = 'MainForm'
-  ClientHeight = 386
-  ClientWidth = 788
+  ClientHeight = 543
+  ClientWidth = 732
   OnCreate = FormCreate
   inherited StatusBar1: TStatusBar
-    Top = 372
-    Width = 788
+    Top = 529
+    Width = 732
   end
   inherited ToolBar1: TToolBar
-    Width = 788
+    Width = 732
   end
-  inherited MainMenu1: TMainMenu[2]
+  inherited PrimaryFrame: TFrame1
+    Height = 503
+    Top = 26
+    Width = 732
+    HorzScrollBar.Page = 732
+    VertScrollBar.Page = 503
+    TabOrder = 2
+  end
+  inherited MainMenu1: TMainMenu
     object MenuItem14: TMenuItem[1]
       Caption = 'Railroad'
       object MenuItem15: TMenuItem
@@ -28,7 +38,7 @@ inherited MainForm: TMainForm
       end
     end
   end
-  inherited ActionList1: TActionList[3]
+  inherited ActionList1: TActionList
     object RailroadRailroadAction: TAction[8]
       Category = 'Railroad'
       Caption = 'Railroad'
@@ -44,15 +54,5 @@ inherited MainForm: TMainForm
       Caption = 'Sections'
       OnExecute = RailroadSectionsActionExecute
     end
-  end
-  inherited ImageList1: TImageList[4]
-  end
-  inherited OpenDialog1: TOpenDialog[5]
-  end
-  inherited SaveDialog1: TSaveDialog[6]
-  end
-  inherited PrinterSetupDialog1: TPrinterSetupDialog[7]
-  end
-  inherited PrintDialog1: TPrintDialog[8]
   end
 end

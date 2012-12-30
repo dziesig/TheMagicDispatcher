@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="13">
+    <Units Count="14">
       <Unit0>
         <Filename Value="MagicDispatcher.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -65,66 +65,68 @@
         <UnitName Value="Common1"/>
       </Unit4>
       <Unit5>
-        <Filename Value="../MagicLibraries/magicformframe1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Frame1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Frame"/>
-        <UnitName Value="MagicFormFrame1"/>
-      </Unit5>
-      <Unit6>
         <Filename Value="magicdispatcherrailroadform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RailroadForm1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicdispatcherrailroadform1"/>
-      </Unit6>
-      <Unit7>
+      </Unit5>
+      <Unit6>
         <Filename Value="railroaddefaultsform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DefaultsForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="railroaddefaultsform1"/>
-      </Unit7>
-      <Unit8>
+      </Unit6>
+      <Unit7>
         <Filename Value="railroadsectionsform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="SectionsForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="railroadsectionsform1"/>
-      </Unit8>
-      <Unit9>
+      </Unit7>
+      <Unit8>
         <Filename Value="railroadbaseform1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RailroadBaseForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="railroadbaseform1"/>
-      </Unit9>
-      <Unit10>
+      </Unit8>
+      <Unit9>
         <Filename Value="../MagicLibraries/magicmainformbase1.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MagicMainFormBase"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicmainformbase1"/>
-      </Unit10>
-      <Unit11>
+      </Unit9>
+      <Unit10>
         <Filename Value="magicdispatchermainform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="magicdispatchermainform"/>
-      </Unit11>
-      <Unit12>
+      </Unit10>
+      <Unit11>
         <Filename Value="../MagicLibraries/cursorstackunit1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="CursorStackUnit1"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../MagicLibraries/picturepersists1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PicturePersists1"/>
       </Unit12>
+      <Unit13>
+        <Filename Value="railroadsectionsunit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="railroadsectionsunit1"/>
+      </Unit13>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
