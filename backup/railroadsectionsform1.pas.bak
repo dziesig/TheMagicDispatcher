@@ -243,7 +243,7 @@ begin
   C := Railroad.SectionList.Count;
   StringGrid1.RowCount := C;// Railroad.SectionList.Count;
   StringGrid1.ColCount := 1;
-  for I := 0 to pred( StringGrid1.C ) do
+  for I := 0 to pred( C ) do
     StringGrid1.Cells[0,I] := Railroad.SectionList.Items[I].Name;
   fSelectedRow := 0;
 end;

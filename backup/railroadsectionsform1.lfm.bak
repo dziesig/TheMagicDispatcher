@@ -1,21 +1,24 @@
 inherited SectionsForm: TSectionsForm
-  Height = 367
+  Left = 211
+  Height = 364
+  Top = 282
   Width = 655
   HorzScrollBar.Page = 655
   HorzScrollBar.Range = 608
   VertScrollBar.Page = 367
   VertScrollBar.Range = 234
+  ActiveControl = SectionNameEdit
   Align = alClient
   Anchors = []
   Caption = 'SectionsForm'
-  ClientHeight = 367
+  ClientHeight = 364
   ClientWidth = 655
   OnCreate = FormCreate
   OnHide = FormHide
   ShowHint = True
   object StringGrid1: TStringGrid[0]
     Left = 48
-    Height = 308
+    Height = 305
     Top = 36
     Width = 288
     Anchors = [akTop, akLeft, akBottom]

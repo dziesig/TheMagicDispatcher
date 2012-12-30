@@ -30,6 +30,7 @@ type
     Panel1: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormHide(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure LabeledEdit1Exit(Sender: TObject);
@@ -91,6 +92,28 @@ end;
 procedure TRailroadForm1.Button2Click(Sender: TObject);
 begin
   Image1.Picture.Clear;
+end;
+
+procedure TRailroadForm1.FormCreate(Sender: TObject);
+  procedure FixComboBox( CB : TComboBox );
+  var
+    I, J : Integer;
+    S : String;
+  begin
+    for I := 0 To pred(CB.Items.Count) do
+      begin
+        S := CB.Items[I];
+        for J := 1 to Length(S) do
+          if S[J] = '~' then
+            S[J] := #9;
+        CB.Items[I] := S;
+      end;
+  end;
+
+begin
+  inherited;
+  FixComboBox( SuperiorDirectionCB );
+  FixComboBox( InferiorDirectionCB );
 end;
 
 end.

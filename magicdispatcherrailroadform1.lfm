@@ -1,12 +1,13 @@
 inherited RailroadForm1: TRailroadForm1
-  Left = 506
+  Left = 668
   Height = 429
-  Top = 202
+  Top = 276
   Width = 694
   ActiveControl = LabeledEdit1
   Caption = 'RailroadForm1'
   ClientHeight = 429
   ClientWidth = 694
+  OnCreate = FormCreate
   OnHide = FormHide
   OnShow = FormShow
   object LabeledEdit1: TLabeledEdit[0]
@@ -89,7 +90,6 @@ inherited RailroadForm1: TRailroadForm1
       Top = 27
       Width = 248
       ItemHeight = 0
-      ItemIndex = 0
       Items.Strings = (
         'East'
         'North'
@@ -97,16 +97,16 @@ inherited RailroadForm1: TRailroadForm1
         'South'
         'Up'
         'Down'
-        'Clockwise'
-        'Anticlockwise'
-        'Pair'
-        'Impair'
-        '上行  up'
-        '下行  down'
-        '上り  up'
-        '下り  down'
-        '外回り outer'
-        '内回り inner'
+        'Clockwise~~~(UK)'
+        'Anticlockwise~(UK)'
+        'Pair~~~~(France)'
+        'Impair~~~~(France)'
+        '上行 ~~up~~(Japan)'
+        '下行 ~~down~(Japan)'
+        '上り~~up~~(China)'
+        '下り~~down~(China)'
+        '外回り~~outer~(China)'
+        '内回り~~inner~(China)'
       )
       TabOrder = 0
       Text = 'East'
@@ -133,7 +133,6 @@ inherited RailroadForm1: TRailroadForm1
       Top = 83
       Width = 248
       ItemHeight = 0
-      ItemIndex = 2
       Items.Strings = (
         'East'
         'North'
@@ -141,16 +140,16 @@ inherited RailroadForm1: TRailroadForm1
         'South'
         'Up'
         'Down'
-        'Clockwise'
-        'Anticlockwise'
-        'Pair'
-        'Impair'
-        '上行  up'
-        '下行  down'
-        '上り  up'
-        '下り  down'
-        '外回り outer'
-        '内回り inner'
+        'Clockwise~~~(UK)'
+        'Anticlockwise~(UK)'
+        'Pair~~~~(France)'
+        'Impair~~~~(France)'
+        '上行 ~~up~~(Japan)'
+        '下行 ~~down~(Japan)'
+        '上り~~up~~(China)'
+        '下り~~down~(China)'
+        '外回り~~outer~(China)'
+        '内回り~~inner~(China)'
       )
       TabOrder = 1
       Text = 'West'
