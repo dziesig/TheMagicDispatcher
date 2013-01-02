@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="14">
+    <Units Count="15">
       <Unit0>
         <Filename Value="MagicDispatcher.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -127,6 +127,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="railroadsectionsunit1"/>
       </Unit13>
+      <Unit14>
+        <Filename Value="../MagicLibraries/generics1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="generics1"/>
+      </Unit14>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

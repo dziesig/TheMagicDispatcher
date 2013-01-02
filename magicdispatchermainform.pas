@@ -105,6 +105,7 @@ begin
   Data.Free;
   RR := TMagicDispatcherRailroad.Create( nil, UntitledRR );
   Railroad := RR;
+  Railroad.UNMODIFY;
 end;
 
 procedure TMainForm.FileOpen(FileName: String);

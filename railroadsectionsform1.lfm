@@ -15,6 +15,7 @@ inherited SectionsForm: TSectionsForm
   ClientWidth = 655
   OnCreate = FormCreate
   OnHide = FormHide
+  OnShow = FormShow
   ShowHint = True
   object StringGrid1: TStringGrid[0]
     Left = 48
@@ -23,7 +24,7 @@ inherited SectionsForm: TSectionsForm
     Width = 288
     Anchors = [akTop, akLeft, akBottom]
     AutoEdit = False
-    ColCount = 1
+    ColCount = 2
     DefaultColWidth = 256
     FixedCols = 0
     FixedRows = 0

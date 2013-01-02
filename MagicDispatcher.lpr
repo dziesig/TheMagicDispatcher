@@ -11,7 +11,7 @@ uses
   persists1, TextIO1, Common1, magicdispatcherrailroadform1,
   railroaddefaultsform1, railroadsectionsform1, railroadbaseform1,
   magicmainformbase1, CursorStackUnit1, magicdispatchermainform, 
-picturepersists1, railroadsectionsunit1
+picturepersists1, generics1, railroadsectionsunit1
   { you can add units after this };
 
 {$R *.res}

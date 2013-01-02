@@ -36,7 +36,13 @@ const
   Version = 1;
 
 procedure TSection.Save(TextIO: TTextIO);
+var
+  N : String;
+  I, O : Integer;
 begin
+  N := Name;
+  I := Id;
+  O := Order;
   SaveHeader( TextIO, Version );
   SaveTrailer( TextIO );
 end;

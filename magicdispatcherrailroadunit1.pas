@@ -146,6 +146,7 @@ begin
     begin
       fSectionList.Free;
       fSectionList := TSectionList.Load( TextIO ) as TSectionList;
+      fSectionList.Parent := Self;
     end;
 end;
 
@@ -156,14 +157,20 @@ begin
   fInferiorDirection := 'West';
   fSuperiorIsOdd     := False;
   fExtraTrainName    := 'Extra';
+  if Assigned( fLogo ) then fLogo.Free;
   fLogo := TPicturePersists.Create( self );
+  if Assigned( fSectionList ) then fSectionList.free;
   fSectionList := TSectionList.Create( self );
+  UNMODIFY
 end;
 
 procedure TMagicDispatcherRailroad.UNMODIFY;
 begin
   inherited UNMODIFY;
-  if Assigned( fLogo ) then fLogo.UNMODIFY;
+  if Assigned( fLogo ) then
+    fLogo.UNMODIFY;
+  if Assigned( fSectionList ) then
+    fSectionList.UNMODIFY;
 end;
 
 initialization
