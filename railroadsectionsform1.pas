@@ -166,7 +166,7 @@ end;
 procedure TSectionsForm.FormHide(Sender: TObject);
 var
   I : Integer;
-  Index : Integer;
+//  Index : Integer;
   S : TSection;
 begin
   // Check for an empty string grid (unfortunately, it will have a RowCount = 1)

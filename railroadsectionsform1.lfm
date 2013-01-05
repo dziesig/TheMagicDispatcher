@@ -1,7 +1,7 @@
 inherited SectionsForm: TSectionsForm
-  Left = 623
+  Left = 533
   Height = 364
-  Top = 295
+  Top = 294
   Width = 655
   HorzScrollBar.Page = 655
   HorzScrollBar.Range = 608
@@ -239,8 +239,8 @@ inherited SectionsForm: TSectionsForm
   end
   object ActionList1: TActionList[7]
     Images = ImageList1
-    left = 536
-    top = 32
+    left = 544
+    top = 72
     object UpAction: TAction
       Hint = 'Move Section Up in List'
       ImageIndex = 1
@@ -268,8 +268,8 @@ inherited SectionsForm: TSectionsForm
     end
   end
   object ImageList1: TImageList[8]
-    left = 568
-    top = 32
+    left = 544
+    top = 128
     Bitmap = {
       4C69050000001000000010000000008080000080800000808000008080000080
       800000808000000000FF000000FF000000FF0080800000808000008080000080

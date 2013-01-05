@@ -8,6 +8,7 @@ uses
   Classes, SysUtils, FileUtil, PrintersDlgs, Forms, Controls, Graphics, Dialogs,
   ComCtrls, Menus, ActnList, MagicDispatcherRailroadUnit1, magicmainformbase1,
   MagicDispatcherRailroadForm1, RailroadDefaultsForm1, RailroadSectionsForm1,
+  RailroadTracksForm1,
   MagicFormFrame1;
 
 type
@@ -15,7 +16,8 @@ type
   { TMainForm }
 
   TMainForm = class(TMagicMainFormBase)
-    MenuItem16: TMenuItem;
+    MenuItem18: TMenuItem;
+    RailroadTracksAction: TAction;
     MenuItem17: TMenuItem;
     RailroadSectionsAction: TAction;
     RailroadDefaultsAction: TAction;
@@ -26,13 +28,14 @@ type
     procedure RailroadDefaultsActionExecute(Sender: TObject);
     procedure RailroadRailroadActionExecute(Sender: TObject);
     procedure RailroadSectionsActionExecute(Sender: TObject);
+    procedure RailroadTracksActionExecute(Sender: TObject);
   private
     { private declarations }
     procedure FileNew; override;
     procedure FileOpen( FileName : String ); override;
     procedure FileSave; override;
-    function GetRailroad: TMagicDispatcherRailroad;
-    procedure SetRailroad(AValue: TMagicDispatcherRailroad);
+    function GetRailroad: TRailroad;
+    procedure SetRailroad(AValue: TRailroad);
 
     procedure RRChanged( Sender : TObject ); // Event fired when any component
                                              // of fRailroad changes.
@@ -40,12 +43,13 @@ type
     RRForm : TRailroadForm1;
     DefaultsForm : TDefaultsForm;
     SectionsForm : TSectionsForm;
+    TracksForm   : TTrackForm;
 
     procedure UpdateData; override;
 
   public
     { public declarations }
-    property Railroad : TMagicDispatcherRailroad read GetRailroad write SetRailroad;
+    property Railroad : TRailroad read GetRailroad write SetRailroad;
   end;
 
 var
@@ -74,8 +78,9 @@ begin
   RRForm := TRailroadForm1.Create( self );
   DefaultsForm := TDefaultsForm.Create( self );
   SectionsForm := TSectionsForm.Create( self );
+  TracksForm := TTrackForm.Create( self );
   RRForm.Visible := False;
-  Railroad := TMagicDispatcherRailroad.Create( nil, UntitledRR );
+  Railroad := TRailroad.Create( nil, UntitledRR );
   CurrentFile := NoFile;
 
   PrimaryFrame.Form := RRForm;
@@ -97,13 +102,18 @@ begin
   PrimaryFrame.Form := SectionsForm;
 end;
 
+procedure TMainForm.RailroadTracksActionExecute(Sender: TObject);
+begin
+  PrimaryFrame.Form := TracksForm;
+end;
+
 procedure TMainForm.FileNew;
 var
-  RR : TMagicDispatcherRailroad; // for debug
+  RR : TRailroad; // for debug
 begin
   inherited;
   Data.Free;
-  RR := TMagicDispatcherRailroad.Create( nil, UntitledRR );
+  RR := TRailroad.Create( nil, UntitledRR );
   Railroad := RR;
   Railroad.UNMODIFY;
 end;
@@ -115,7 +125,7 @@ begin
   CursorStack.Push( crHourGlass );
   TextIO := TTextIO.Create( FileName, False );
   Data.Free;
-  Railroad := TMagicDispatcherRailroad.Load( TextIO ) as TMagicDispatcherRailroad;
+  Railroad := TRailroad.Load( TextIO ) as TRailroad;
   TextIO.Free;
   CursorStack.Pop;
 end;
@@ -131,23 +141,24 @@ begin
   CursorStack.Pop;
 end;
 
-function TMainForm.GetRailroad: TMagicDispatcherRailroad;
+function TMainForm.GetRailroad: TRailroad;
 begin
-  Result := Data as TMagicDispatcherRailroad;
+  Result := Data as TRailroad;
 end;
 
-procedure TMainForm.SetRailroad(AValue: TMagicDispatcherRailroad);
+procedure TMainForm.SetRailroad(AValue: TRailroad);
 begin
   Data := aValue;// as TPersists1;
   RRForm.Railroad := Railroad;
   DefaultsForm.Railroad := Railroad;
   SectionsForm.Railroad := Railroad;
+  TracksForm.Railroad   := Railroad;
   Railroad.OnChange := @RRChanged;
 end;
 
 procedure TMainForm.RRChanged(Sender: TObject);
 begin
-  Data := (Sender as TMagicDispatcherRailroad);
+  Data := (Sender as TRailroad);
 end;
 
 procedure TMainForm.UpdateData;

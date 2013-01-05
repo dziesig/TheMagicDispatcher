@@ -38,7 +38,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="15">
+    <Units Count="17">
       <Unit0>
         <Filename Value="MagicDispatcher.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -132,6 +132,19 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="generics1"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="railroadtracksunit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="railroadtracksunit1"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="railroadtracksform1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TrackForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="railroadtracksform1"/>
+      </Unit16>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -26,13 +26,14 @@ interface
 uses
   Classes, SysUtils, Graphics, ExtCtrls,
 
-  Persists1, TextIO1, PicturePersists1, RailroadSectionsUnit1;
+  Persists1, TextIO1, PicturePersists1, RailroadSectionsUnit1,
+  RailroadTracksUnit1;
 
 type
 
-  { TMagicDispatcherRailroad }
+  { TRailroad }
 
-  TMagicDispatcherRailroad = class( TPersists )
+  TRailroad = class( TPersists )
   private
     fExtraTrainName: String;
     fSectionList: TSectionList;
@@ -40,6 +41,7 @@ type
     fInferiorDirection : String;
     fSuperiorIsOdd     : Boolean;
     fLogo         : TPicturePersists;
+    fTrackList: TTrackList;
     function GetLogo: TPicture;
     procedure SetExtraTrainName(AValue: String);
     procedure SetInferiorDirection(AValue: String);
@@ -47,6 +49,7 @@ type
     procedure SetSuperiorDirection(AValue: String);
     procedure SetSuperiorIsOdd(AValue: Boolean);
     procedure SetLogo(AValue: TPicture);
+    procedure SetTrackList(AValue: TTrackList);
   public
 
     procedure Save( TextIO : TTextIO ); override;
@@ -60,6 +63,7 @@ type
     property SuperiorIsOdd     : Boolean read fSuperiorIsOdd     write SetSuperiorIsOdd;
     property ExtraTrainName    : String  read fExtraTrainName    write SetExtraTrainName;
     property SectionList       : TSectionList read fSectionList  write SetSectionList;
+    property TrackList         : TTrackList   read fTrackList    write SetTrackList;
 end; // TMagicDispatcherRailroad
 
 
@@ -69,43 +73,43 @@ implementation
 uses
   ObjectFactory1;
 
-{ TMagicDispatcherRailroad }
+{ TRailroad }
 
 const
-  Version = 3;
+  Version = 4;
 
-function TMagicDispatcherRailroad.GetLogo: TPicture;
+function TRailroad.GetLogo: TPicture;
 begin
   Result := fLogo.Picture;
 end;
 
-procedure TMagicDispatcherRailroad.SetExtraTrainName(AValue: String);
+procedure TRailroad.SetExtraTrainName(AValue: String);
 begin
   Update( fExtraTrainName, AValue);
 end;
 
-procedure TMagicDispatcherRailroad.SetInferiorDirection(AValue: String);
+procedure TRailroad.SetInferiorDirection(AValue: String);
 begin
   Update( fInferiorDirection, AValue );
 end;
 
-procedure TMagicDispatcherRailroad.SetSectionList(AValue: TSectionList);
+procedure TRailroad.SetSectionList(AValue: TSectionList);
 begin
   if fSectionList=AValue then Exit;
   fSectionList:=AValue;
 end;
 
-procedure TMagicDispatcherRailroad.SetSuperiorDirection(AValue: String);
+procedure TRailroad.SetSuperiorDirection(AValue: String);
 begin
   Update( fSuperiorDirection, AValue );
 end;
 
-procedure TMagicDispatcherRailroad.SetSuperiorIsOdd(AValue: Boolean);
+procedure TRailroad.SetSuperiorIsOdd(AValue: Boolean);
 begin
   Update( fSuperiorIsOdd, AValue );
 end;
 
-procedure TMagicDispatcherRailroad.SetLogo(AValue: TPicture);
+procedure TRailroad.SetLogo(AValue: TPicture);
 var
   OldLogo : String;
 begin
@@ -115,8 +119,14 @@ begin
     Modify;
 end;
 
+procedure TRailroad.SetTrackList(AValue: TTrackList);
+begin
+//  if fTrackList=AValue then Exit;
+  fTrackList:=AValue;
+end;
 
-procedure TMagicDispatcherRailroad.Save(TextIO: TTextIO);
+
+procedure TRailroad.Save(TextIO: TTextIO);
 begin
   SaveHeader( TextIO, Version );
   TextIO.WriteLn( fSuperiorDirection );
@@ -125,10 +135,11 @@ begin
   fLogo.Save( TextIO );
   TextIO.WriteLn( fExtraTrainName );
   fSectionList.Save( TextIO );
+  fTrackList.Save( TextIO );
   SaveTrailer( TextIO );
 end;
 
-procedure TMagicDispatcherRailroad.Read(TextIO: TTextIO; Version: Integer);
+procedure TRailroad.Read(TextIO: TTextIO; Version: Integer);
 begin
   MakeNew;
   if Version >= 1 then
@@ -148,9 +159,15 @@ begin
       fSectionList := TSectionList.Load( TextIO ) as TSectionList;
       fSectionList.Parent := Self;
     end;
+  if Version >= 4 then
+    begin
+      fTrackList.Free;
+      fTrackList := TTrackList.Load( TextIO ) as TTrackList;
+      fTrackList.Parent := Self;
+    end;
 end;
 
-procedure TMagicDispatcherRailroad.MakeNew;
+procedure TRailroad.MakeNew;
 begin
   inherited;
   fSuperiorDirection := 'East';
@@ -161,20 +178,24 @@ begin
   fLogo := TPicturePersists.Create( self );
   if Assigned( fSectionList ) then fSectionList.free;
   fSectionList := TSectionList.Create( self );
+  if Assigned( fTrackList ) then fTrackList.Free;
+  fTrackList := TTrackList.Create( self );
   UNMODIFY
 end;
 
-procedure TMagicDispatcherRailroad.UNMODIFY;
+procedure TRailroad.UNMODIFY;
 begin
   inherited UNMODIFY;
   if Assigned( fLogo ) then
     fLogo.UNMODIFY;
   if Assigned( fSectionList ) then
     fSectionList.UNMODIFY;
+  if Assigned( fTrackList ) then
+    fTrackList.UNMODIFY;
 end;
 
 initialization
-  ObjectFactory.RegisterClass( TMagicDispatcherRailroad.ClassType );
+  ObjectFactory.RegisterClass( TRailroad.ClassType );
 
 
 end.

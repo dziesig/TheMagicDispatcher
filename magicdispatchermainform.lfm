@@ -30,11 +30,11 @@ inherited MainForm: TMainForm
       object MenuItem15: TMenuItem
         Action = RailroadRailroadAction
       end
-      object MenuItem16: TMenuItem
-        Action = RailroadDefaultsAction
-      end
       object MenuItem17: TMenuItem
         Action = RailroadSectionsAction
+      end
+      object MenuItem18: TMenuItem
+        Action = RailroadTracksAction
       end
     end
   end
@@ -52,7 +52,14 @@ inherited MainForm: TMainForm
     object RailroadSectionsAction: TAction[10]
       Category = 'Railroad'
       Caption = 'Sections'
+      Hint = 'Add, Edit or Remove Railroad Sections'
       OnExecute = RailroadSectionsActionExecute
+    end
+    object RailroadTracksAction: TAction[11]
+      Category = 'Railroad'
+      Caption = 'Tracks'
+      Hint = 'Add, Edit or Remove Railroad Tracks'
+      OnExecute = RailroadTracksActionExecute
     end
   end
 end

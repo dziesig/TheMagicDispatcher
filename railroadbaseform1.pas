@@ -16,14 +16,14 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { private declarations }
-    fRailroad: TMagicDispatcherRailroad;
-    procedure SetRailroad(AValue: TMagicDispatcherRailroad);
+    fRailroad: TRailroad;
+    procedure SetRailroad(AValue: TRailroad);
   protected
     procedure LoadControls; virtual; abstract;
 
   public
     { public declarations }
-    property Railroad : TMagicDispatcherRailroad read fRailroad write SetRailroad;
+    property Railroad : TRailroad read fRailroad write SetRailroad;
   end;
 
 var
@@ -40,7 +40,7 @@ begin
   Visible := False;
 end;
 
-procedure TRailroadBaseForm.SetRailroad(AValue: TMagicDispatcherRailroad);
+procedure TRailroadBaseForm.SetRailroad(AValue: TRailroad);
 begin
 //  if fRailroad=AValue then Exit;
   fRailroad:=AValue;
