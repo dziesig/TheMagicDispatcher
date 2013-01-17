@@ -1,3 +1,22 @@
+//Copyright (c) 2013 by Donald R. Ziesig
+//
+//Donald.at.Ziesig.org
+//
+//This file is part of the MagicDispatcher program.
+//
+//MagicDispatcher is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//MagicDispatcher is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with MagicDispatcher.  If not, see <http://www.gnu.org/licenses/>.
+
 unit magicdispatchermainform;
 
 {$mode objfpc}{$H+}
@@ -8,7 +27,7 @@ uses
   Classes, SysUtils, FileUtil, PrintersDlgs, Forms, Controls, Graphics, Dialogs,
   ComCtrls, Menus, ActnList, MagicDispatcherRailroadUnit1, magicmainformbase1,
   MagicDispatcherRailroadForm1, RailroadDefaultsForm1, RailroadSectionsForm1,
-  RailroadTracksForm1,
+  RailroadTracksForm2,
   MagicFormFrame1;
 
 type
@@ -43,7 +62,7 @@ type
     RRForm : TRailroadForm1;
     DefaultsForm : TDefaultsForm;
     SectionsForm : TSectionsForm;
-    TracksForm   : TTrackForm;
+    TracksForm   : TTrackForm2;
 
     procedure UpdateData; override;
 
@@ -78,7 +97,7 @@ begin
   RRForm := TRailroadForm1.Create( self );
   DefaultsForm := TDefaultsForm.Create( self );
   SectionsForm := TSectionsForm.Create( self );
-  TracksForm := TTrackForm.Create( self );
+  TracksForm := TTrackForm2.Create( self );
   RRForm.Visible := False;
   Railroad := TRailroad.Create( nil, UntitledRR );
   CurrentFile := NoFile;

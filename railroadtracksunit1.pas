@@ -1,3 +1,22 @@
+//Copyright (c) 2013 by Donald R. Ziesig
+//
+//Donald.at.Ziesig.org
+//
+//This file is part of the MagicDispatcher program.
+//
+//MagicDispatcher is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//MagicDispatcher is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with MagicDispatcher.  If not, see <http://www.gnu.org/licenses/>.
+
 unit railroadtracksunit1;
 
 {$mode objfpc}{$H+}
@@ -16,14 +35,26 @@ type
                  tkLeftCrossover, tkRightCrossover, tkDoubleCrossover,
                  tkLeftSlip, tkRightSlip, tkDoubleSlip,
                  tkCrossing,
-                 tkCount );
+                 tkCount ); // tkCount is just to get the end of the enumeration - there is no track associated with it.
 
-  TTrack = class;
+  TTrackInternalConnection = ( ticNone,      // There is no connection
+                               ticReverse,   // Use if a reverse move is needed
+                               ticForward ); // A normal connection
 
-  TTrackEnd = (Left, Right);
-  TTrackLevel = ( Upper, Middle, Lower );
-  TTrackConnection = array [TTrackEnd, TTrackLevel] of TTrack;
-  TTrackConnections = array [TTrackEnd, TTrackLevel] of TTrackConnection;
+  TTrackExternalConnection = ( tecUL,    //      +------------+
+                               tecCL,    // tecUL|            |tecUR
+                               tecLL,    // tecCL|            |tecCR
+                               tecUR,    // tecLL|            |tecLR
+                               tecCR,    //      +------------+
+                               tecLR );
+
+  TTrackConnection = array [TTrackInternalConnection] of TTrackInternalConnection;
+  //TTrack = class;
+  //
+  //TTrackEnd = (Left, Right);
+  //TTrackLevel = ( Upper, Middle, Lower );
+  //TTrackConnection = array [TTrackEnd, TTrackLevel] of TTrack;
+  //TTrackConnections = array [TTrackEnd, TTrackLevel] of TTrackConnection;
 
   { TTrack }
 
@@ -31,15 +62,16 @@ type
   private
 
     fRailroad : TPersists;     // Remapped to TRailroad internally
+    function GetConnection: TTrackConnection;
     function GetSectionName: String;
-    function GetTrack( I : TTrackEnd; J : TTrackLevel): TTrack;
+//    function GetTrack( I : TTrackEnd; J : TTrackLevel): TTrack;
     procedure SetSectionId(AValue: Integer);
-    procedure SetTrack( I : TTrackEnd; J : TTrackLevel; AValue: TTrack);
+//    procedure SetTrack( I : TTrackEnd; J : TTrackLevel; AValue: TTrack);
     procedure SetTrackKind(AValue: TTrackKind);
   protected
     fSectionId : Integer;
     fTrackKind : TTrackKind;
-    fConnections : TTrackConnections;
+//    fConnections : TTrackConnections;
   public
 
     constructor Create( AParent : TPersists );
@@ -54,7 +86,8 @@ type
     property SectionName : String read GetSectionName;
     property SectionId   : Integer read fSectionId write SetSectionId;
     property TrackKind   : TTrackKind read fTrackKind write SetTrackKind;
-    property Connection[ I : TTrackEnd; J : TTrackLevel] : TTrack read GetTrack write SetTrack;
+    property Connection : TTrackConnection read GetConnection;
+//    property Connection[ I : TTrackEnd; J : TTrackLevel] : TTrack read GetTrack write SetTrack;
   end;
 
   TTrackListX = specialize TPersistsList<TTrack>;
@@ -99,6 +132,17 @@ end;
 const
   Version = 2;
 
+constructor TTrack.Create(AParent: TPersists);
+begin
+  inherited Create( AParent );
+  fRailroad := AParent.Parent;
+end;
+
+function TTrack.GetConnection: TTrackConnection;
+begin
+
+end;
+
 function TTrack.GetSectionName: String;
 begin
   if fSectionId >= 0 then
@@ -107,11 +151,11 @@ begin
     Result := '<Unspecified>';
 end;
 
-function TTrack.GetTrack( I : TTrackEnd; J : TTrackLevel): TTrack;
-begin
-
-end;
-
+//function TTrack.GetTrack( I : TTrackEnd; J : TTrackLevel): TTrack;
+//begin
+//
+//end;
+//
 procedure TTrack.MakeNew;
 begin
   inherited MakeNew;
@@ -145,11 +189,11 @@ begin
   Update( fSectionId, AValue );
 end;
 
-procedure TTrack.SetTrack( I : TTrackEnd; J : TTrackLevel; AValue: TTrack);
-begin
-
-end;
-
+//procedure TTrack.SetTrack( I : TTrackEnd; J : TTrackLevel; AValue: TTrack);
+//begin
+//
+//end;
+//
 procedure TTrack.SetTrackKind(AValue: TTrackKind);
 begin
   Update( fTrackKind, AValue );
@@ -167,12 +211,6 @@ begin
       Data := NewValue;
       Modify;
     end;
-end;
-
-constructor TTrack.Create(AParent: TPersists);
-begin
-  inherited Create( AParent );
-  fRailroad := AParent.Parent;
 end;
 
 initialization
